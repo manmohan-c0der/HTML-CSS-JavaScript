@@ -1,103 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-body {
-    overflow: hidden;
-    /* This is for horizantal scoll bar */
-    animation: bodysake linear .6s infinite;
-}
-
-.sky {
-    height: 100vh;
-    width: 100%;
-    background-image: url("../Image/background.jpg");
+.body {
+    background: url("../img/kg.png");
+    min-height: 100vh;
+    background-size: 90vw 130vh;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time {
     position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 30px;
+    /* text-shadow: 0 0 20px #070707f3, 20px 0 0 #131312f3; */
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.trees {
-    height: 100vh;
-    width: 100%;
-    background-image: url("../Image/trees.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+#main {
     position: absolute;
-    bottom: 137px;
+    bottom: 125px;
+    left: 10px;
+    font-size: 30px;
+    /* text-shadow: 0 0 20px #070707f3, 20px 0 0 #131312f3; */
+    color: rgb(247, 6, 6);
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.track {
-    height: 60vh;
-    width: 800vw;
-    background-image: url("../Image/track.png");
-    background-repeat: repeat-x;
-    /* background-size: cover; */
+#scoreBox {
     position: absolute;
-    top: 70vh;
-    animation: carshake linear .6s infinite;
+    top: 126px;
+    right: 98px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
 }
 
-.car {
-    height: 100px;
-    width: 385px;
-    background-image: url("../Image/car_body.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+#hiscoreBox {
     position: absolute;
-    left: 444px;
-    bottom: 30vh;
-    animation: shake linear .16s infinite;
+    top: 180px;
+    right: 80px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
 }
 
-.wheel1 img {
-    width: 77px;
-    position: relative;
-    top: 42px;
-    left: 42px;
-    animation: wheelRotation linear .16s infinite;
+#board {
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: 92vmin;
+    height: 92vmin;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid dashed;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
 }
 
-.wheel2 img {
-    width: 77px;
-    position: relative;
-    top: -38px;
-    left: 238px;
-    animation: wheelRotation linear .16s infinite;
+.head {
+    background: linear-gradient(rgb(236, 24, 24), rgb(228, 228, 129));
+    border: 2px solid rgb(34, 4, 34);
+    transform: scale(1.02);
+    border-radius: 9px;
 }
 
-@keyframes wheelRotation {
-    100% {
-        transform: rotate(360deg);
-    }
+.snake {
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
 }
 
-@keyframes carshake {
-    100% {
-        transform: translateX(-500vw);
-    }
-}
-
-@keyframes shake {
-    0% {
-        transform: translateY(-5px);
-    }
-    50% {
-        transform: translateY(5px);
-    }
-    100% {
-        transform: translateY(-5px);
-    }
-}
-
-@keyframes bodysake {
-    0% {
-        transform: translateY(-5px);
-    }
-    50% {
-        transform: translateY(5px);
-    }
-    100% {
-        transform: translateY(-5px);
-    }
+.food {
+    background: linear-gradient(red, purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
 }
